@@ -1,23 +1,24 @@
-// The elements of an array can be accessed by their indices
-// arr[4]
+// Os elementos de um array podem ser acessados ​​pelos seus índices
+//arr[4]
 #[test]
 fn array_index() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
-    assert!(arr[__] == 1);
+    assert!(arr[4] == 1);
 }
 
-// A new fixed size array can be created by declaring the type of its elements
-// along with its length
+// Um ​​novo array de tamanho fixo pode ser criado declarando o tipo de seus elementos
+//junto com seu comprimento
 // [i32; 0] = []
 #[test]
 fn array_empty() {
-    let arr: __;
+    let arr: [i32; 0];
     assert!(arr.len() == 0);
 }
 
-// Attempting to access an array at an index that is
-// out of its bounds will cause an error. Let's cause
-// that error in this example.
+
+//Tentativa de acessar um array em um índice que é
+// fora de seus limites causará um erro. Vamos causar
+// esse erro neste exemplo.
 #[test]
 #[should_panic]
 #[allow(const_err)]
@@ -26,8 +27,8 @@ fn out_of_index() {
     arr[__];
 }
 
-// Elements can be replaced in an array at a certain index.
-// hint: Without the 'mut' keyword, you won't be able to change data.
+// Os elementos podem ser substituídos em um array em um determinado índice.
+// dica: sem a palavra-chave 'mut', você não poderá alterar os dados.
 #[test]
 fn insert_at_index() {
     let mut arr: [u8; 5] = [0, 1, 2, 3, 4];
@@ -35,7 +36,7 @@ fn insert_at_index() {
     assert!(arr == [0, 1, 2, 3, 0]);
 }
 
-// Arrays can be iterated over.
+// Arrays podem ser iterados.
 #[test]
 fn array_iteration() {
     let arr: [u8; 3] = [3, 2, 1];
@@ -45,7 +46,7 @@ fn array_iteration() {
     assert!(iterator.next().unwrap() == &__);
 }
 
-// Arrays can also be mutated during iteration
+// Arrays também podem sofrer mutação durante a iteração
 #[test]
 fn array_map() {
     let arr: [u32; 4] = [2, 5, 7, 4];
@@ -56,7 +57,7 @@ fn array_map() {
     assert!(iterator.next() == Some(8));
 }
 
-// You can filter an array for results that match a given condition
+// Você pode filtrar um array por resultados que correspondam a uma determinada condição
 #[test]
 fn array_filter() {
     let arr: [u16; 5] = [1, 2, 3, 4, 5];
@@ -66,7 +67,7 @@ fn array_filter() {
     assert!(iterator.next().is_none());
 }
 
-// Filter and map can be combined to do both at once
+// Filtro e mapa podem ser combinados para fazer as duas coisas ao mesmo tempo
 #[test]
 fn array_filter_map() {
     let arr: [u8; 5] = [2, 1, 2, 1, 2];
@@ -76,7 +77,7 @@ fn array_filter_map() {
     assert!(iterator.next().is_none());
 }
 
-// This can be used for more complex logic as well
+//Isso também pode ser usado para lógicas mais complexas
 #[test]
 fn complex_array_filter_map() {
     let arr: [u64; 4] = [4, 8, 16, 32];
@@ -91,7 +92,7 @@ fn complex_array_filter_map() {
     assert!(iterator.next().is_none());
 }
 
-// Arrays can also be iterated through using a for loop
+// Arrays também podem ser iterados usando um loop for
 #[test]
 fn for_loops() {
     let arr: [u64; 3] = [1, 2, 3];
@@ -102,7 +103,7 @@ fn for_loops() {
     }
 }
 
-// Let's try iterating over an array of strings to build a sentence
+// Vamos tentar iterar um array de strings para construir uma frase
 #[test]
 fn for_loops_two() {
     let words: [&'static str; 3] = ["I", "love", "Rust"];
